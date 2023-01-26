@@ -1,3 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    html {
+        font-family: 'Quicksand';
+    }
+}
+
+@layer components {
+    .test {
+        @apply flex flex-grow;
+    }
+}
+
+.google {
+    background-image: url(https://ssl.gstatic.com/gb/images/sprites/p_1x_4f8a89234111.png);
+    background-size: 64px 3238px;
+}
+
+.login-bg {
+    background-image: url("/bgs/login-bg.svg");
+    background-size: 100% 100%;
+}
