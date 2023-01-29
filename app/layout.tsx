@@ -38,7 +38,7 @@ function Header() {
             <div className="flex-grow">Nav</div>
             <div className="flex items-center gap-4">
               <ThemeToggler/>
-              <Link href="/login" className="bg-indigo-500 text-white px-3 py-2 rounded-lg hover:bg-indigo-600 dark:hover:bg-indigo-400 transition-all duration-500">Log In</Link>
+              <Link href="/login" className="bg-indigo-500 text-white hover:bg-indigo-600 dark:hover:bg-indigo-400 button">Sign In</Link>
             </div>
             
         </div>

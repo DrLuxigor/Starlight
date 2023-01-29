@@ -14,6 +14,9 @@
     .test {
         @apply flex flex-grow;
     }
+    .button {
+        @apply px-3 py-2 transition-colors duration-500 rounded-lg cursor-pointer;
+    }
 }
 
 .google {
@@ -24,4 +27,11 @@
 .login-bg {
     background-image: url("/bgs/login-bg.svg");
     background-size: 100% 100%;
+}
+
+input:user-invalid {
+    border: 2px solid red;
+}
+input:-moz-ui-invalid {
+    border: 2px solid red;
 }
