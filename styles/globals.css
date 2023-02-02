@@ -1,37 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-    html {
-        font-family: 'Quicksand';
-    }
+  html {
+    font-family: "Quicksand";
+  }
 }
 
 @layer components {
-    .test {
-        @apply flex flex-grow;
-    }
-    .button {
-        @apply px-3 py-2 transition-colors duration-500 rounded-lg cursor-pointer;
-    }
+  .test {
+    @apply flex flex-grow;
+  }
+  .button {
+    @apply cursor-pointer rounded-lg px-3 py-2 transition-colors duration-500;
+  }
 }
 
 .google {
-    background-image: url(https://ssl.gstatic.com/gb/images/sprites/p_1x_4f8a89234111.png);
-    background-size: 64px 3238px;
+  background-image: url(https://ssl.gstatic.com/gb/images/sprites/p_1x_4f8a89234111.png);
+  background-size: 64px 3238px;
 }
 
 .login-bg {
-    background-image: url("/bgs/login-bg.svg");
-    background-size: 100% 100%;
+  background-image: url("/bgs/login-bg.svg");
+  background-size: 100% 100%;
 }
 
-input:user-invalid {
-    border: 2px solid red;
+validated:user-invalid {
+  border: 2px solid red;
 }
-input:-moz-ui-invalid {
-    border: 2px solid red;
+validated:-moz-ui-invalid {
+  border: 2px solid red;
 }

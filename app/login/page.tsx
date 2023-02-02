@@ -6,13 +6,10 @@ import { useState } from "react";
 import { signInWithEmailAndPw } from "../../lib/auth/client/client-auth";
 import { UserCredential } from "firebase/auth";
 
-
-
 function validateRequest() {
   let form = document.getElementById("loginform") as HTMLFormElement;
   let valid = form.checkValidity();
-  if(valid)
-    return true;
+  if (valid) return true;
 
   form.reportValidity();
   return false;
@@ -29,10 +26,9 @@ export default function LoginPage() {
   const handleSubmit = async () => {
     let valid = validateRequest();
 
-    if(valid) {
+    if (valid) {
       await login();
     } else {
-      
     }
   };
 
@@ -57,22 +53,20 @@ export default function LoginPage() {
       error = error as string;
       setErrorMessage(error);
     }
-  }
-
-  
+  };
 
   return (
-    <div className="min-h-screen w-full flex justify-center items-center lg:dark:bg-[url('/bgs/login-bg.svg')] bg-[length:100%_100%] bg-no-repeat">
-      <div className="md:border border-indigo-100 dark:border-slate-700 md:shadow-2xl flex rounded-2xl backdrop-blur-md">
-        <div className="hidden lg:flex min-h-full w-52 xl:w-80 bg-indigo-500 rounded-l-2xl items-center justify-center bg-[url('/bgs/x.svg')] bg-cover bg-no-repeat">
-          <StarIcon className="w-12 h-12 text-white"></StarIcon>
+    <div className="flex min-h-screen w-full items-center justify-center bg-[length:100%_100%] bg-no-repeat lg:dark:bg-[url('/bgs/login-bg.svg')]">
+      <div className="flex rounded-2xl border-indigo-100 backdrop-blur-md dark:border-slate-700 md:border md:shadow-2xl">
+        <div className="hidden min-h-full w-52 items-center justify-center rounded-l-2xl bg-indigo-500 bg-[url('/bgs/x.svg')] bg-cover bg-no-repeat lg:flex xl:w-80">
+          <StarIcon className="h-12 w-12 text-white"></StarIcon>
         </div>
-        <div className="flex flex-col gap-8 items-center px-8 py-16 sm:px-16 sm:py-32">
+        <div className="flex flex-col items-center gap-8 px-8 py-16 sm:px-16 sm:py-32">
           <h1 className="text-2xl">Sign In</h1>
-          <form className="flex flex-col gap-8 w-80 sm:w-96" id="loginform">
+          <form className="flex w-80 flex-col gap-8 sm:w-96" id="loginform">
             <input
               id="email"
-              className="bg-inherit rounded-lg focus:ring-indigo-500"
+              className="rounded-lg bg-inherit focus:ring-indigo-500"
               type="email"
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
               placeholder="user@example.com"
@@ -80,10 +74,10 @@ export default function LoginPage() {
               autoComplete="email"
               onChange={(e) => setEmail(e.target.value)}
             />
-            <div className="flex flex-col relative">
+            <div className="relative flex flex-col">
               <input
                 id="password"
-                className="bg-inherit rounded-lg focus:ring-indigo-500"
+                className="rounded-lg bg-inherit focus:ring-indigo-500"
                 type="password"
                 placeholder="Password"
                 required
@@ -92,7 +86,7 @@ export default function LoginPage() {
               />
               <Link
                 href=""
-                className="absolute right-0 top-full text-end text-gray-400 hover:underline cursor-pointer"
+                className="absolute right-0 top-full cursor-pointer text-end text-gray-400 hover:underline"
               >
                 Forgot Password?
               </Link>
@@ -102,12 +96,18 @@ export default function LoginPage() {
               <input
                 id="remember"
                 type="checkbox"
-                className="text-indigo-500 bg-inherit focus:ring-indigo-500 rounded mr-2 w-5 h-5"
+                className="mr-2 h-5 w-5 rounded bg-inherit text-indigo-500 focus:ring-indigo-500"
                 onChange={(e) => setRemember(e.target.checked)}
               ></input>
               <label>Remember me</label>
             </div>
-            {errorMessage ? <div><p className="text-red-600">{errorMessage}</p></div> : <></>}
+            {errorMessage ? (
+              <div>
+                <p className="text-red-600">{errorMessage}</p>
+              </div>
+            ) : (
+              <></>
+            )}
             <input
               type="button"
               value="Sign In"
@@ -115,15 +115,15 @@ export default function LoginPage() {
               onClick={handleSubmit}
             />
           </form>
-          <div className="w-80 sm:w-96 flex items-center gap-2">
-            <div className="border-b border-b-gray-400 flex-grow"></div>
+          <div className="flex w-80 items-center gap-2 sm:w-96">
+            <div className="flex-grow border-b border-b-gray-400"></div>
             <a className="text-gray-400">or sign in with</a>
-            <div className="border-b border-b-gray-400 flex-grow"></div>
+            <div className="flex-grow border-b border-b-gray-400"></div>
           </div>
-          <div className="grid grid-cols-2 w-80 sm:w-96 gap-4">
-            <div className="button font-semibold relative flex justify-center items-center border bg-white text-black hover:bg-gray-100 hover:bg-opacity-80">
+          <div className="grid w-80 grid-cols-2 gap-4 sm:w-96">
+            <div className="button relative flex items-center justify-center border bg-white font-semibold text-black hover:bg-gray-100 hover:bg-opacity-80">
               <svg
-                className="w-6 h-6"
+                className="h-6 w-6"
                 viewBox="0 0 20 20"
                 preserveAspectRatio="xMidYMid meet"
                 focusable="false"
@@ -148,10 +148,10 @@ export default function LoginPage() {
 
               <a className="w-full text-center">Google</a>
             </div>
-            <div className="button font-semibold relative flex justify-center items-center border bg-white text-black hover:bg-gray-100 hover:bg-opacity-80">
+            <div className="button relative flex items-center justify-center border bg-white font-semibold text-black hover:bg-gray-100 hover:bg-opacity-80">
               <img
                 src="https://github.com/favicon.ico"
-                className="absolute left-4 w-6 h-6"
+                className="absolute left-4 h-6 w-6"
                 alt="github logo"
               />
               <a className="w-full text-center">Github</a>
