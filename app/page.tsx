@@ -14,7 +14,7 @@ function page() {
             <a className="button bg-indigo-500">Some button</a>
           </div>
         </div>
-        <div className="aspect-square h-full w-full bg-[url('/bgs/x.svg')] bg-[length:100%_100%]"></div>
+        <div className="fadein aspect-square h-full w-full bg-[url('/bgs/x.svg')] bg-[length:100%_100%]" style={{maskImage: 'radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 82%)', WebkitMaskImage: 'radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 82%)'}}></div>
       </div>
     </div>
   );
