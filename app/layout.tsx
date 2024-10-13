@@ -3,6 +3,7 @@ import ThemeToggler from "../components/themetoggle";
 import { StarIcon } from "@heroicons/react/24/solid";
 import "../styles/globals.css";
 import AccountComponent from "../components/AccountComponent";
+import AutoLogin from "../components/AutoLogin";
 
 export default function RootLayout({
   children,
@@ -39,6 +40,7 @@ function Header() {
         </Link>
         <div className="flex-grow">Nav</div>
         <div className="flex items-center gap-4">
+          <AutoLogin/>
           <ThemeToggler />
           {/*@ts-ignore */}
           <AccountComponent/>

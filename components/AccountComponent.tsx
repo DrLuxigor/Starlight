@@ -2,6 +2,7 @@ import { cookies } from "next/headers";
 import { verifySession } from "../lib/auth/server/server-auth";
 import { UserCircleIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
+import AccountMenu from "./AccountMenu";
 
 function SignInButton() {
   return (
@@ -17,13 +18,18 @@ function SignInButton() {
 export default async function AccountComponent() {
   const nextCookies = cookies();
   var decoded = await verifySession(nextCookies.get("session"));
-  console.log("descoded: " + decoded?.email)
+  console.log("descoded: " + decoded?.email);
 
   if (!decoded) {
     return <SignInButton />;
   }
 
-  return <div className="cursor-pointer hover:bg-gray-500 hover:bg-opacity-50 flex items-center rounded-md">
-    <UserCircleIcon width={"32px"} height={"32px"}/>
+  return (
+    <div className="flex items-center">
+      <div className="flex cursor-pointer items-center rounded-md hover:bg-gray-500 hover:bg-opacity-50">
+        <UserCircleIcon width={"32px"} height={"32px"} />
+      </div>
+      <AccountMenu/>
     </div>
+  );
 }
