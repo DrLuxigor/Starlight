@@ -2,13 +2,13 @@ import { initializeApp, getApps, getApp } from "firebase/app";
 import { getAuth } from "firebase/auth"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBr12MYzlmOfXNOCs3wJ_w0Y3qcniSJs1A",
-  authDomain: "lk-common.firebaseapp.com",
-  projectId: "lk-common",
-  storageBucket: "lk-common.appspot.com",
-  messagingSenderId: "868245318265",
-  appId: "1:868245318265:web:3c828a8cc6c874fc14c2a8",
-  measurementId: "G-SN8K11GFFV"
+  apiKey: "AIzaSyA7rr2-_XdSqwxcqQlvD5skdAZbXO_uWII",
+  authDomain: "starlight-4a23f.firebaseapp.com",
+  projectId: "starlight-4a23f",
+  storageBucket: "starlight-4a23f.appspot.com",
+  messagingSenderId: "345520748440",
+  appId: "1:345520748440:web:0c86388bf918e811595ded",
+  measurementId: "G-7DVBF3LG19"
 };
 
 const clientApp = initializeApp(firebaseConfig);
